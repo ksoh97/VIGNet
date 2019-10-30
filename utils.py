@@ -84,5 +84,5 @@ print(a.shape, b.shape, c.shape, d.shape, e.shape, f.shape)
 
 # TODO: Scenario 1) training: sbj 1~9, test: sbj 10
 def load_dataset_scen1(subject, fold):
-    path = '/home/hjkwon/Desktop/pycharm-2018.3.5/projects/Data/GIST_Drowsiness/5fold'
+    path = 'YOUR PATH'
 
