@@ -5,7 +5,7 @@ from mne.filter import resample
 # TODO: Scenario 1) training: sbj 1~9, test: sbj 10
 # TODO: Scenario 2) training: sbj 1~10, test: sbj 1~10
 def load_dataset(subject, fold):
-    path = '/home/hjkwon/Desktop/pycharm-2018.3.5/projects/Data/GIST_Drowsiness/5fold'
+    path = 'YOUR PATH'
 
     # Load data
     train_eeg = np.load(path + "/cv%01d_sbj%02d_train_eeg.npy" % (fold, subject))
