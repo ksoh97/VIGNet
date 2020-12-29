@@ -1,0 +1,38 @@
+# VIGNet
+Tensorflow implementation of [VIGNet: A Deep Convolutional Neural Network for EEG-based Driver Vigilance Estimation](https://ieeexplore.ieee.org/abstract/document/9061668).
+
+### Requirements
+tensorflow (1.14.0)\
+tensorboard (2.2.2)\
+tensorflow-addons (0.11.0)\
+tqdm (4.48.0)\
+matplotlib (3.3.0)\
+numpy (1.19.0)\
+scikit-learn (0.23.2)
+
+
+### Datasets
+Place them into "data_path" on each Config.py
+1. [HandWritten digits data (MNIST)](http://yann.lecun.com/exdb/mnist/)
+2. [3D Geometric shape data](https://github.com/deepmind/3d-shapes)
+
+
+### How to run
+Mode:\
+#0 Pre-training a classifier\
+#1 Training the counterfactual map generator
+
+1. Pre-training a classifier
+>- `training.py --mode=0`
+
+2. Training the counterfactual map generator
+>- Set the classifier and encoder weight for training (freeze)
+>- Change the mode from 0 to 1 on Config.py
+  >- `training.py --mode=1`
+
+
+### Config.py of each dataset 
+data_path = Raw dataset path\
+save_path = Storage path to save results such as tensorboard event files, model weights, etc.\
+cls_weight_path = Pre-trained classifier weight path obtained in mode#0 setup\
+enc_weight_path = Pre-trained encoder weight path obtained in mode#0 setup
