@@ -33,8 +33,8 @@ def load_dataset(subject, fold):
     return train_eeg, train_label, valid_eeg, valid_label, test_eeg, test_label
 
 
-def load_datasetabc(subject, fold):
-    path = '/home/hjkwon/Desktop/pycharm-2018.3.5/projects/Data/'
+def load_dataset2(subject, fold):
+    path = 'YOUR PATH'
 
     # Load data
     train_eeg = np.load(path + "/TIME_Sess01_sub01_train.npy")
@@ -75,12 +75,6 @@ def load_datasetabc(subject, fold):
 
 a, b, c, d, e, f = load_datasetabc(1, 1)
 print(a.shape, b.shape, c.shape, d.shape, e.shape, f.shape)
-#
-# tmp = e[21, :, :, :]
-#
-# for i in range(a.shape[0]):
-#     print(i)
-#     if np.sum(a[i, :, :, :] - tmp) == 0: print("hey")
 
 # TODO: Scenario 1) training: sbj 1~9, test: sbj 10
 def load_dataset_scen1(subject, fold):
