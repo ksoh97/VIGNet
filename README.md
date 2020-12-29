@@ -4,7 +4,6 @@ Tensorflow implementation of [VIGNet: A Deep Convolutional Neural Network for EE
 ### Requirements
 tensorflow (1.14.0)\
 tensorboard (2.2.2)\
-tensorflow-addons (0.11.0)\
 tqdm (4.48.0)\
 matplotlib (3.3.0)\
 numpy (1.19.0)\
@@ -12,9 +11,10 @@ scikit-learn (0.23.2)
 
 
 ### Datasets
-Place them into "data_path" on each Config.py
-1. [HandWritten digits data (MNIST)](http://yann.lecun.com/exdb/mnist/)
-2. [3D Geometric shape data](https://github.com/deepmind/3d-shapes)
+We used publicly available [SEED-VIG dataset](https://iopscience.iop.org/article/10.1088/1741-2552/aa5a98/meta?casa_token=zMmqflOHEYYAAAAA:F7YusFzBVULbjWBmoy39cvGI9RPMrUrDIOF_s1azdKrH1L0KJW9Cw_NuqFspM5OsRjMpECCpwtne)
+>- 23 trials, ~ two hours EEG signal/trial
+>- 17 electrode channels, 200Hz sampling rate
+>- This dataset is labeled by [PERCLOS level](https://iopscience.iop.org/article/10.1088/1741-2552/aa5a98/meta?casa_token=zMmqflOHEYYAAAAA:F7YusFzBVULbjWBmoy39cvGI9RPMrUrDIOF_s1azdKrH1L0KJW9Cw_NuqFspM5OsRjMpECCpwtne)
 
 
 ### How to run
