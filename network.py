@@ -19,7 +19,7 @@ def block(input, num_filter, pool_type, pool_size, pool_stride, regularizer, ini
         hidden = tf.layers.max_pooling2d(inputs=hidden, pool_size=pool_size, strides=pool_stride)
     elif pool_type == "average":
         hidden = tf.layers.average_pooling2d(inputs=hidden, pool_size=pool_size, strides=pool_stride)
-    # else: ValueError("We have only Max and Average pooling...")
+    else: ValueError("We have only Max and Average pooling...")
 
     return hidden
 
@@ -30,8 +30,6 @@ def drowsynet(eeg, label, reuse=False):
         # else:
         #     keep_prob = 0.5
 
-        # We used L1-L2 regularizer, Xavier Initializer for all convolutional layers.
-        # TODO-HW: regularization, initializer
         regularizer = tf.contrib.layers.l1_l2_regularizer(scale_l1=0.01, scale_l2=0.001)
         initializer = tf.contrib.layers.xavier_initializer()
 
@@ -53,7 +51,6 @@ def drowsynet(eeg, label, reuse=False):
         logit = tf.layers.dense(inputs=hidden, units=1, activation=None)
         logit = tf.squeeze(logit)
 
-        # TODO-HW sparse_softmax_cross_entropy
         loss = tf.reduce_mean(tf.nn.sigmoid_cross_entropy_with_logits(labels=label, logits=logit))
         prediction = tf.math.round(tf.math.sigmoid(logit))
     return loss, prediction
