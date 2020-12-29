@@ -39,24 +39,17 @@ def experiment(subject, fold):
     #                                            decay_steps=10000, decay_rate=0.96, staircase=True)
 
     # Adam optimizer
-    # TODO-HW: Adam, RMSprop, AdaDelta, Adaboost / momentum, Adagrad etc.
     optimizer = tf.train.AdamOptimizer(learning_rate).minimize(loss=training_loss, var_list=theta)
 
     # Load dataset
     train_eeg, train_label, valid_eeg, valid_label, test_eeg, test_label = \
         utils.load_datasetabc(subject=subject, fold=fold)
 
-
-    # train_eeg, train_label, valid_eeg, valid_label, _, _ = \
-    #     utils.load_dataset(subject=subject, fold=fold)
-    # _, _, _, _, test_eeg, test_label = \
-    #     utils.load_dataset(subject=subject+4, fold=fold)
-
-    # Start training
     # For GPU server
     # config = tf.ConfigProto()
     # config.gpu_options.allow_growth = True
     # sess = tf.Session(config=config)
+    
     sess = tf.Session()
     sess.run(tf.global_variables_initializer())
     # saver = tf.train.Saver(keep_checkpoint_every_n_hours=24, max_to_keep=1000)
