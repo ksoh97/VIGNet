@@ -3,7 +3,7 @@ Tensorflow implementation of [VIGNet: A Deep Convolutional Neural Network for EE
 
 ### Requirements
 tensorflow (1.14.0)\
-tensorboard (2.2.2)\
+tensorboard (2.2.0)\
 matplotlib (3.3.0)\
 numpy (1.19.0)\
 scikit-learn (0.23.2)
